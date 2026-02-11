@@ -5,11 +5,12 @@ bindkey -v
 
 CONFIG_FOLDER="$HOME/.config/zsh"
 
-os=$(uname -s)
-if [[ $os == "Darwin" ]]; then
+if [[ "$(uname -s)" == "Darwin" ]]; then
   STAT_CMD="stat -L -f %m "
+  CLIP=pbcopy
 else
   STAT_CMD="stat -L -c %Z "
+  CLIP="xclip -sel clip"
 fi
 
 setopt PROMPT_SUBST
