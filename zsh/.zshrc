@@ -3,6 +3,8 @@
 [[ $- != *i* ]] && return
 bindkey -v
 
+export PATH="$HOME/.local/bin:$PATH"
+
 CONFIG_FOLDER="$HOME/.config/zsh"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then

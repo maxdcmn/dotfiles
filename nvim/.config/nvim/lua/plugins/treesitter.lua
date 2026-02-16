@@ -47,14 +47,11 @@ return {
     branch = "main",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
-      local sel = require("nvim-treesitter-textobjects.select")
-      local mov = require("nvim-treesitter-textobjects.move")
-      local swp = require("nvim-treesitter-textobjects.swap")
+      require("nvim-treesitter-textobjects").init()
 
-      require("nvim-treesitter-textobjects").setup({
-        select = { lookahead = true },
-        move = { set_jumps = true },
-      })
+      local sel = require("nvim-treesitter.textobjects.select")
+      local mov = require("nvim-treesitter.textobjects.move")
+      local swp = require("nvim-treesitter.textobjects.swap")
 
       local objects = { f = "function", c = "class", i = "conditional", l = "loop", p = "parameter" }
       for key, obj in pairs(objects) do
