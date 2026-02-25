@@ -6,10 +6,10 @@ DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 if [[ "$(uname -s)" == "Darwin" ]]; then
   command -v brew >/dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   xcode-select --install 2>/dev/null || true
-  brew install git stow neovim tmux fzf ranger lazygit python3 node zsh go
+  brew install git stow neovim tmux fzf ranger lazygit python3 node zsh go fastfetch
 else
   sudo apt update
-  sudo apt install -y git stow curl unzip zsh tmux python3 python3-venv ranger make gcc nodejs npm golang
+  sudo apt install -y git stow curl unzip zsh tmux python3 python3-venv ranger make gcc nodejs npm golang fastfetch
 
   curl -Lo /tmp/nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
   sudo tar -C /opt -xzf /tmp/nvim.tar.gz
