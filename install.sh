@@ -24,6 +24,9 @@ else
   sudo install /tmp/lazygit /usr/local/bin
 fi
 
+curl -fsSL https://bun.sh/install | bash
+npm install -g pnpm
+
 cd "$DOTFILES"
 for dir in */; do
   stow "$(basename "$dir")" -d . -t ~/ -v

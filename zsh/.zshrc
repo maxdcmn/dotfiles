@@ -3,7 +3,8 @@
 [[ $- != *i* ]] && return
 bindkey -v
 
-export PATH="$HOME/.local/bin:$PATH"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$PATH"
 
 CONFIG_FOLDER="$HOME/.config/zsh"
 
@@ -47,3 +48,5 @@ export FZF_DEFAULT_OPTS="--multi --no-height --extended"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 source "$CONFIG_FOLDER/aliases.zsh"
+
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
