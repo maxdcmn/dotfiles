@@ -17,3 +17,5 @@ fh() { history 1 | fzf | sed "s/ *[0-9]* *//" | $CLIP; }
 roll() { echo $(( (RANDOM % (${1:-6})) + 1 )); }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source "$CONFIG_FOLDER/book.zsh"

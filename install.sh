@@ -26,6 +26,7 @@ fi
 
 curl -fsSL https://bun.sh/install | bash
 npm install -g pnpm
+pip3 install epy-reader
 
 cd "$DOTFILES"
 for dir in */; do
